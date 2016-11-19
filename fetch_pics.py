@@ -30,8 +30,3 @@ for url in images:
 	print url
 	location = toWhere+'/'+str(image_id)+'_'+url.split('/')[-1].split('?')[0]
 	urllib.urlretrieve(url, location)
-	
-	
-
-
-source = urllib.urlopen(myUrl).read()
