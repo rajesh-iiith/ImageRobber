@@ -23,9 +23,10 @@ if not images:
 # Convert relative urls to absolute ones
 images = [urlparse.urljoin(response.url, url) for url in images]  
 print 'Found %s images' % len(images)
+print '%s images are unique' % len(set(images))
 
 image_id  = 0
-for url in images:
+for url in set(images):
 	image_id = image_id + 1
 	image_size = len(urllib.urlopen(url).read()) / float (1024)
 
